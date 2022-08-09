@@ -6,14 +6,14 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 theme                    : "minimal-mistakes-jekyll"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "mint" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Minimal Mistakes"
+title                    : "hyuk's-SoftWare"
 title_separator          : "-"
 subtitle                 : "Development Test Site"
-name                     : "Your Name"
+name                     : "김상혁"
 description              : "Minimal Mistakes theme test."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/test"
@@ -91,7 +91,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "김상혁"
   avatar           : "/assets/images/bio-photo.jpg"
   bio              : "I am an **amazing** person."
   location         : "Somewhere"
@@ -267,7 +267,7 @@ collections:
 defaults:
   # _posts
   - scope:
-      path: ""
+      path: "docs/_posts"
       type: posts
     values:
       layout: single
@@ -277,7 +277,7 @@ defaults:
       related: true
   # _pages
   - scope:
-      path: "_pages"
+      path: "docs/_pages"
       type: pages
     values:
       layout: single
