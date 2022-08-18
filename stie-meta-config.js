@@ -1,9 +1,9 @@
 module.exports = {
-    title: `HYEOK's SoftWare`,
+    title: `HYUK's SoftWare`,
     subtitle: ``,
     description: ``,
     author: {
-        name: `@SANG-HYEOK KIM`,
+        name: `@SANG-HYUK KIM`,
         summary: `Seoul, Korea`,
     },
     introduction: `상혁의 블로그입니다.`,
@@ -23,9 +23,9 @@ module.exports = {
         `react`,
         `FontEnd`,
         `Developer`,
-        `HYEOK's SoftWare`,
+        `HYUK's SoftWare`,
     ],
     comment: {
-        utterances: 'HYEOK\'s SoftWare', // Your repository for archive comment
+        utterances: 'HYUK\'s SoftWare', // Your repository for archive comment
     },
 }
