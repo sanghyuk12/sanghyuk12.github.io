@@ -1,4 +1,131 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://github.com/sanghyuk12</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 18 Aug 2022 07:42:40 GMT</lastBuildDate><item><title><![CDATA[쿠키, 세션, 토큰(JWT)]]></title><description><![CDATA[…]]></description><link>https://github.com/sanghyuk12/post7/</link><guid isPermaLink="false">https://github.com/sanghyuk12/post7/</guid><pubDate>Thu, 16 Jun 2022 22:12:03 GMT</pubDate><content:encoded>&lt;ul&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Gatsby Starter Blog RSS Feed]]></description><link>https://github.com/sanghyuk12</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 18 Aug 2022 08:32:48 GMT</lastBuildDate><item><title><![CDATA[쿠키, 세션, 토큰(JWT)]]></title><description><![CDATA[…]]></description><link>https://github.com/sanghyuk12/post7/</link><guid isPermaLink="false">https://github.com/sanghyuk12/post7/</guid><pubDate>Thu, 16 Jun 2022 22:12:03 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;쿠키, 세션, 토큰의 필요성&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;HTTP&lt;/code&gt;란 인터넷 상에서 데이터를 주고 받기 위한 서버/클라이언트 모델을 따르는 프로토콜을 말한다. &lt;code class=&quot;language-text&quot;&gt;HTTP&lt;/code&gt;는 &lt;strong&gt;비연결성 및 무상태성&lt;/strong&gt;이라는 특징을 가지고 있는데 이는 서버의 자원 낭비를 줄일 수 있다는 장점을 가지고 있으나, &lt;strong&gt;로그인 이후 다음 요청에서 해당 클라이언트를 기억하지 못하는 현상 때문에 로그인을 유지하지 못하는 상황&lt;/strong&gt;이 발생한다. 이와 같은 &lt;strong&gt;문제점을 해결하기 위해 &lt;code class=&quot;language-text&quot;&gt;쿠키(Cookie)&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;세션(Session)&lt;/code&gt;이라는 기능을 사용&lt;/strong&gt;하게된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;쿠키 (Cookie)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;클라이언트가 어떠한 웹사이트를 방문하는 경우 사이트가 사용되고 있는 &lt;strong&gt;서버를 통해 클라이언트 브라우저에 설치되는 작은 기록 파일&lt;/strong&gt;을 일컫는다.&lt;/li&gt;
+&lt;li&gt;서버는 클라이언트의 &lt;strong&gt;로그인 요청&lt;/strong&gt;에 대한 응답을 작성할 때, 클라이언트 측에 저장하고 싶은 정보를 &lt;code class=&quot;language-text&quot;&gt;ResponseHeader&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;Set-Cookie&lt;/code&gt;에 담는다. (&lt;code class=&quot;language-text&quot;&gt;Cookie&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;Key-Value&lt;/code&gt;형식의 문자열이다.) 이후 해당 클라이언트는 요청을 보낼 때마다 매번 저장된 &lt;code class=&quot;language-text&quot;&gt;Cookie&lt;/code&gt;를 &lt;code class=&quot;language-text&quot;&gt;RequestHeader&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;Cookie&lt;/code&gt;에 담아 보낸다. 서버는 &lt;code class=&quot;language-text&quot;&gt;Cookie&lt;/code&gt;에 담긴 정보를 바탕으로 해당 요청의 &lt;strong&gt;클라이언트가 누군지 식별할 수 있다.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;단점&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;보안에 취약(요청 시 &lt;code class=&quot;language-text&quot;&gt;Cookie&lt;/code&gt;의 값을 그대로 보내어, 유출 및 조작 당할 위험이 존재)&lt;/li&gt;
+&lt;li&gt;용량 제한이 있어, 많은 정보를 담을 수 없다.&lt;/li&gt;
+&lt;li&gt;브라우저마다 &lt;code class=&quot;language-text&quot;&gt;Cookie&lt;/code&gt;에 대한 지원 형태가 다르기에, 브라우저 간 공유가 불가능하다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Cookie&lt;/code&gt; 사이즈가 커질수록 네트워크에 부하가 생긴다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;세션 (Session)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Session&lt;/code&gt;은 클라이언트의 인증 정보를 &lt;code class=&quot;language-text&quot;&gt;Cookie&lt;/code&gt;가 아닌 서버 측에 저장하고 관리한다.&lt;/li&gt;
+&lt;li&gt;서버는 클라이언트의 로그인 요청에 대한 응답을 작성할 때, 인증 정보는 서버에 저장하고 클라이언트 식별자인 &lt;code class=&quot;language-text&quot;&gt;JSESSIONID&lt;/code&gt;를 &lt;code class=&quot;language-text&quot;&gt;Cookie&lt;/code&gt;에 담는다. 이후 클라이언트는 요청을 보낼 때 마다 &lt;code class=&quot;language-text&quot;&gt;JSESSIONID&lt;/code&gt; 가 저장 된 &lt;code class=&quot;language-text&quot;&gt;Cookie&lt;/code&gt;를 함께 보낸다. 서버는 &lt;code class=&quot;language-text&quot;&gt;JSSESIONID&lt;/code&gt;의 유효성을 판별해 클라이언트를 식별한다&lt;/li&gt;
+&lt;li&gt;장점
+&lt;ul&gt;
+&lt;li&gt;서버가 클라이언트의 웹 브라우저에 의존하지 않아도 된다.&lt;/li&gt;
+&lt;li&gt;쿠키를 포함한 요청이 외부에 노출되어도 &lt;code class=&quot;language-text&quot;&gt;Session&lt;/code&gt;ID 자체는 유의미한 개인 정보를 담지 않는다.&lt;/li&gt;
+&lt;li&gt;각 사용자마다 고유한 &lt;code class=&quot;language-text&quot;&gt;Session&lt;/code&gt;ID가 발급되기 때문에 요청이 들어올 때마다 회원 정보를 확인 할 필요가 없다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;단점
+&lt;ul&gt;
+&lt;li&gt;해커가 &lt;code class=&quot;language-text&quot;&gt;Session&lt;/code&gt; ID를 중간에 탈취하여 클라이언트인 척 위장할 수 있다.&lt;/li&gt;
+&lt;li&gt;서버에서 &lt;code class=&quot;language-text&quot;&gt;Session&lt;/code&gt;저장소를 사용하기 때문에, 요청이 많아지면 서버에 부하가 생긴다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;토큰 (Token)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;JWT(JSON Web Token)&lt;/code&gt;은 인증에 필요한 정보를을 암호화시킨 토큰을 말한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;JWT(JSON Web Token)&lt;/code&gt; 기반 인증은 쿠키/세션 방식과 유사하게&lt;code class=&quot;language-text&quot;&gt;JTW Token&lt;/code&gt;을 &lt;code class=&quot;language-text&quot;&gt;HTTP-Header&lt;/code&gt;에 실어 서버가 클라이언트를 식별한다&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;JWT(JSON Web Token)&lt;/code&gt;의 구조는 세가지 문자열의 조합이다. 실제 디코딩된 &lt;code class=&quot;language-text&quot;&gt;JWT(JSON Web Token)&lt;/code&gt;은 &lt;code class=&quot;language-text&quot;&gt;Header&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Payload&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Signature&lt;/code&gt;로 이루어져 있다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Header&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Header&lt;/code&gt;는 &lt;code class=&quot;language-text&quot;&gt;alg&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;typ&lt;/code&gt;을 갖고 있다.&lt;code class=&quot;language-text&quot;&gt;alg&lt;/code&gt;는 정보를 암호화할 해싱 알고리즘을, &lt;code class=&quot;language-text&quot;&gt;typ&lt;/code&gt;는 토큰의 타입을 지정한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{
+	&quot;alg&quot;: &quot;HS256&quot;,
+	&quot;typ&quot;: &quot;JWT&quot;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Payload&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Payload&lt;/code&gt;는 실제로 토큰에 담을 정보를 지니고 있다.주로 &lt;code class=&quot;language-text&quot;&gt;클라이언트 고유 ID&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;유효 기간&lt;/code&gt; 등이 포함된다.&lt;code class=&quot;language-text&quot;&gt;Key-Value&lt;/code&gt; 형식으로 이루어진 한 쌍의 정보를 &lt;code class=&quot;language-text&quot;&gt;Claim&lt;/code&gt;이라고 한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{
+	&quot;sub&quot;: &quot;1234567890&quot;,
+	&quot;name&quot;: &quot;John Doe&quot;,
+	&quot;iat&quot;: 1516230922
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Signature&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Signature&lt;/code&gt;는 인코딩된 &lt;code class=&quot;language-text&quot;&gt;Header&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;Payload&lt;/code&gt;를 더한 뒤, 비밀키로 해싱하여 생성한다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Header&lt;/code&gt; 및 &lt;code class=&quot;language-text&quot;&gt;Payload&lt;/code&gt;는 단순 인코딩된 값이기 때문에 해커가 복호화하고 조작할 수 있지만, &lt;code class=&quot;language-text&quot;&gt;Signature&lt;/code&gt;는 서버 측에서 관리하는 비밀키가 유출되지 않는 이상 복호화할 수 없다.&lt;/p&gt;
+&lt;p&gt;따라서 &lt;code class=&quot;language-text&quot;&gt;Signature&lt;/code&gt;는 토큰의 &lt;strong&gt;위변조 여부를 확인&lt;/strong&gt;하는 데 사용된다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;
+HMACSHA256(
+	base64UrlEncode(header) + &quot;.&quot; +
+	base64UrlEncode(payload),
+	secret_key
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;토큰 인증 과정&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;클라이언트 로그인 요청이 들어오면, 서버는 검증 후 클라이언트 고유 ID등의 정보를 &lt;code class=&quot;language-text&quot;&gt;Payload&lt;/code&gt;에 담는다.&lt;/li&gt;
+&lt;li&gt;암호화할 비밀키를 사용해 &lt;code class=&quot;language-text&quot;&gt;Access Token(JWT)&lt;/code&gt;을 발급한다.&lt;/li&gt;
+&lt;li&gt;클라이언트는 전달받은 토큰을 저장해두고, 서버에 요청할 때마다 토큰을 요청 헤더 &lt;code class=&quot;language-text&quot;&gt;Authorization&lt;/code&gt;에 포함시켜 함께 전달한다.&lt;/li&gt;
+&lt;li&gt;서버는 토큰의 &lt;code class=&quot;language-text&quot;&gt;Signature&lt;/code&gt; 을 비밀키로 복호화한 다음, &lt;code class=&quot;language-text&quot;&gt;위변조 여부&lt;/code&gt; 및 &lt;code class=&quot;language-text&quot;&gt;유효 기간&lt;/code&gt; 등을 확인한다.&lt;/li&gt;
+&lt;li&gt;유효한 토큰이라면 요청에 응답한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;장점&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Header&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;Payload&lt;/code&gt;를 가지고 &lt;code class=&quot;language-text&quot;&gt;Signature&lt;/code&gt;를 생성하므로 데이터 위변조를 막을 수 있다.&lt;/li&gt;
+&lt;li&gt;인증 정보에 대한 &lt;strong&gt;별도의 저장소가 필요 없다&lt;/strong&gt;. (I/O 처리 필요 없음)&lt;/li&gt;
+&lt;li&gt;JWT는 &lt;code class=&quot;language-text&quot;&gt;토큰에 대한 기본 정보&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;전달할 정보&lt;/code&gt; 및 &lt;code class=&quot;language-text&quot;&gt;토큰이 검증됐음을 증명하는 서명&lt;/code&gt; 등 필요한 모든 정보를 자체적으로 지니고 있다.&lt;/li&gt;
+&lt;li&gt;클라이언트의 인증 정보를 저장하는 세션과 다르게, 서버는 무상태(Stateless)가 된다.&lt;/li&gt;
+&lt;li&gt;확장성이 우수하다.&lt;/li&gt;
+&lt;li&gt;토큰 기반으로 다른 로그인 시스템에 접근 및 권한 공유가 가능하다. (토큰 서버 활용)&lt;/li&gt;
+&lt;li&gt;토큰 기반으로 다른 로그인 시스템에 &lt;code class=&quot;language-text&quot;&gt;접근&lt;/code&gt; 및 &lt;code class=&quot;language-text&quot;&gt;권한 공유&lt;/code&gt;가 가능하다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;OAuth&lt;/code&gt;의 경우 Facebook, Google 등 소셜 계정을 이용해 다른 웹서비스에서도 로그인 할 수 있다.&lt;/li&gt;
+&lt;li&gt;모바일 어플리케이션 환경에서도 잘 동작한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;단점&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;쿠키&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;세션&lt;/code&gt;과 다르게 JWT는 토큰의 길이가 길어, 인증 요청이 많을수록 네트워크 부하가 심해진다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Payload&lt;/code&gt; 자체는 암호화되지 않기 때문에 유저의 중요한 정보는 담을 수 없다. (패스워드 등)&lt;/li&gt;
+&lt;li&gt;토큰을 탈취당하면 대처하기 어렵다. 토큰은 한 번 발급되면 유효기간이 만료될 때까지 계속 사용이 가능하다.&lt;/li&gt;
+&lt;li&gt;특정 사용자의 접속을 강제로 만료하기 어렵다. (쿠키/세션 기반 인증은 서버 단에서 쉽게 삭제할 수 있지만 토큰은 그게 안 됨)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[gatsby 폰트 설정]]></title><description><![CDATA[…]]></description><link>https://github.com/sanghyuk12/post8/</link><guid isPermaLink="false">https://github.com/sanghyuk12/post8/</guid><pubDate>Thu, 16 Jun 2022 22:12:03 GMT</pubDate><content:encoded>&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;쿠키, 세션, 토큰의 필요성&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
